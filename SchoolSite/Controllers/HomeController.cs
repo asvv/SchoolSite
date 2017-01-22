@@ -13,8 +13,8 @@ namespace SchoolSite.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-
-            ViewBag.Siema = "siema";
+            var list = db.Subjects.ToList();
+            
             return View();
         }
 

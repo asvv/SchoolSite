@@ -77,6 +77,12 @@ F:\Repos\SchoolSite\SchoolSite\bin\Microsoft.Owin.Security.OAuth.xml
 F:\Repos\SchoolSite\SchoolSite\bin\Microsoft.Owin.Security.Google.xml
 F:\Repos\SchoolSite\SchoolSite\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Repos\SchoolSite\SchoolSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.csprojResolveAssemblyReference.cache
 F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.dll
 F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.pdb
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.csprojResolveAssemblyReference.cache
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.InitialCreate.resources
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.csproj.GenerateResource.Cache
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.ModelMigration.resources
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.ModelMigration2.resources
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.ModelMigration3.resources
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.ModelMigration4.resources

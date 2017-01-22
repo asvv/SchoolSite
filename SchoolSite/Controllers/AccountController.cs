@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SchoolSite.Models;
+using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SchoolSite.Controllers
 {
@@ -139,6 +141,12 @@ namespace SchoolSite.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            var list = new List<string>();
+            list.Add("Teacher");
+            list.Add("Student");
+
+            ViewBag.CmbList = list;
+
             return View();
         }
 
@@ -151,12 +159,38 @@ namespace SchoolSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                MemberType memb ;
+                SchoolMember memobj = null;
+                string role = "";
+                if (model.AccountType == "Teacher")
+                {
+                    memb = MemberType.Teacher;
+                    memobj = new Teacher();
+                    role = "Teacher";
+                }
+                else if (model.AccountType == "Student")
+                {
+                    memb = MemberType.Student;
+                    memobj = new Student();
+                    role = "Student";
+                }
+                else
+                    memb = MemberType.Undefined;
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, CurrentType = memb, CurrentMember = memobj };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
+                 //   var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+
+                    if (!string.IsNullOrWhiteSpace(role))
+                    {
+                        UserManager.AddToRole(user.Id, role);
+                    }
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

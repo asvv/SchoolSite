@@ -17,6 +17,7 @@
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
+   
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -30,12 +31,25 @@
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        @Html.LabelFor(m => m.AccountType, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var list = new List<SelectListItem>()
+            {
+                new SelectListItem() { Text="Nauczyciel", Value="Teacher" },
+                new SelectListItem() { Text="Uczeń", Value="Student" }
+            };
+                @Html.DropDownListFor(m => m.AccountType, list, new { @class = "form-control" })
+            }
+        </div>     
+      </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
         </div>
-    </div>
-}
+        }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
