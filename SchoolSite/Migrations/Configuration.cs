@@ -1,5 +1,7 @@
 namespace SchoolSite.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,6 +16,25 @@ namespace SchoolSite.Migrations
 
         protected override void Seed(SchoolSite.Models.ApplicationDbContext context)
         {
+
+
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+            string[] roles =
+            {
+                "Admin",
+                "Teacher",
+                "Student"
+
+            };
+
+            foreach (var item in roles)
+            {
+                if (!RoleManager.RoleExists(item))
+                    RoleManager.Create(new IdentityRole(item));
+            }
+
+
 
             context.SchoolMembers.AddOrUpdate(x => new { x.Name, x.Surname },
               new Models.Teacher
