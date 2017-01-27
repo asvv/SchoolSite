@@ -81,3 +81,4 @@ F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.dll
 F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.pdb
 F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.Migrations.Initial.resources
 F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.csproj.GenerateResource.Cache
+F:\Repos\SchoolSite\SchoolSite\obj\Debug\SchoolSite.csprojResolveAssemblyReference.cache
