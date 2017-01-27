@@ -1,0 +1,36 @@
+﻿@model SchoolSite.Models.AssignSubjectViewModel
+@{
+    ViewBag.Title = "AssignSubject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AssignSubject</h2>
+
+<div>
+    <h4>Przypisz przedmiot</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => Model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.StudentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.StudentSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.StudentSurname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.SubjectName)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(model=>Model.SubjectName,new List<SelectListItem> { } ,new { @class = "form-control" })
+        </dd>
+
+    </dl>
+    <input type="submit" value="Save" class="btn btn-default" />
+</div>
+

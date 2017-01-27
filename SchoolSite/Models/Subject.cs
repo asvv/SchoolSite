@@ -10,7 +10,8 @@ namespace SchoolSite.Models
     {
         public Subject()
         {
-
+            CurrentGrades = new List<Grade>();
+           
         }
         public int SubjectId { get; set; }
         [DisplayName("Nazwa przedmiotu")]
@@ -21,14 +22,15 @@ namespace SchoolSite.Models
         { get; set; }
 
         [DisplayName("Studenci")]
-        public virtual ICollection<Student> CurrentStudents
+        public virtual ICollection<SchoolMember> CurrentMembers
         { get; set; }
         [DisplayName("Oceny")]
         public virtual ICollection<Grade> CurrentGrades
         { get; set; }
-        [DisplayName("Nauczyciele")]
-        public virtual ICollection<Teacher> CurrentTeachers
-        { get; set; }
+        
+
+
+
 
     }
 }

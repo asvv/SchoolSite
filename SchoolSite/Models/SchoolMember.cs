@@ -36,6 +36,9 @@ namespace SchoolSite.Models
         [DisplayName("Data urodzenia")]
         public DateTime BirthDate
         {  get; set; }
+        [DisplayName("Przedmioty")]
+        public virtual ICollection<Subject> CurrentSubjects
+        { get; set; }
 
     }
 }

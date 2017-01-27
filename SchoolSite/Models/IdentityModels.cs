@@ -57,7 +57,7 @@ namespace SchoolSite.Models
             return new ApplicationDbContext();
         }
       
-
+        
 
       public  DbSet<SchoolMember> SchoolMembers
         { get; set; }

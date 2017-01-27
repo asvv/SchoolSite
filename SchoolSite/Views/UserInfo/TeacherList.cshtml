@@ -1,80 +1,89 @@
-﻿@model List<SchoolSite.Models.Teacher>
+﻿@model IEnumerable<SchoolSite.Models.Teacher>
 
 @{
-    ViewBag.Title = "TeacherList";
+    ViewBag.Title = "Lista Nauczycieli";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    TeacherList
-</h2>
+<h2>Lista Nauczycieli</h2>
 
-<div>
-    <h4>Teacher</h4>
-    
-    <table>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].Surname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].School)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].Degree)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].Room)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => Model[Model.Count].TelephoneNumber)
-            </th>
-        </tr>
-        </table>
-  
-    
-    @foreach (var item in Model)
-    {
-
-        <table>
-            <tr>
-            
-                <th>
-                    @Html.DisplayFor(model => item.Name)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.Surname)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.School)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.Description)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.Degree)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.Room)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.TelephoneNumber)
-                </th>
-            </tr>
-            
-        </table>
-
-
-    }
-</div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.SchoolMemberId }) |
-    @Html.ActionLink("Back to List", "Index")*@
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("searchstring")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.School)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Degree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelephoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.School)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Avatar)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Degree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelephoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Przypisz przedmioty", "AssignSubjectToTeacher", new { id=item.SchoolMemberId }) 
+           @* @Html.ActionLink("Details", "Details", new { id=item.SchoolMemberId }) |
+    @Html.ActionLink("Delete", "Delete", new { id=item.SchoolMemberId })*@
+        </td>
+    </tr>
+}
+
+</table>

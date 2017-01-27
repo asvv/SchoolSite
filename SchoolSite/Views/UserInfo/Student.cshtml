@@ -1,0 +1,100 @@
+﻿@model SchoolSite.Models.Student
+
+@{
+    ViewBag.Title = "Student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialization)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudiesName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudiesName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfStudies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfStudies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartStudiesDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartStudiesDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "EditInfo", new { id = Model.SchoolMemberId })
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.SchoolMemberId }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

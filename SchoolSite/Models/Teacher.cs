@@ -10,7 +10,7 @@ namespace SchoolSite.Models
     {
         public Teacher()
         {
-
+          //  CurrentSubjects = new List<Subject>();
         }
 
         [DisplayName("Stopien naukowy")]
@@ -22,9 +22,7 @@ namespace SchoolSite.Models
         [DisplayName("Numer telefonu")]
         public string TelephoneNumber
         { get; set; }
-        [DisplayName("Przedmioty")]
-        public virtual ICollection<Subject> CurrentSubjects
-        { get; set; }
+       
 
 
 

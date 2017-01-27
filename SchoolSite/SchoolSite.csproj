@@ -202,25 +202,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AuthAttribute.cs" />
-    <Compile Include="Migrations\201612282308216_InitialCreate.cs" />
-    <Compile Include="Migrations\201612282308216_InitialCreate.Designer.cs">
-      <DependentUpon>201612282308216_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701211719369_ModelMigration.cs" />
-    <Compile Include="Migrations\201701211719369_ModelMigration.Designer.cs">
-      <DependentUpon>201701211719369_ModelMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701220019051_ModelMigration2.cs" />
-    <Compile Include="Migrations\201701220019051_ModelMigration2.Designer.cs">
-      <DependentUpon>201701220019051_ModelMigration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701220146500_ModelMigration3.cs" />
-    <Compile Include="Migrations\201701220146500_ModelMigration3.Designer.cs">
-      <DependentUpon>201701220146500_ModelMigration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221837278_ModelMigration4.cs" />
-    <Compile Include="Migrations\201701221837278_ModelMigration4.Designer.cs">
-      <DependentUpon>201701221837278_ModelMigration4.cs</DependentUpon>
+    <Compile Include="Migrations\201701270905211_Initial.cs" />
+    <Compile Include="Migrations\201701270905211_Initial.Designer.cs">
+      <DependentUpon>201701270905211_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -295,11 +279,15 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UserInfo\Info.cshtml" />
-    <Content Include="Views\UserInfo\TeacherList.cshtml" />
     <Content Include="Views\UserInfo\Teacher.cshtml" />
     <Content Include="Views\UserInfo\EditInfoTeacher.cshtml" />
     <Content Include="Views\UserInfo\EditInfoStudent.cshtml" />
     <Content Include="Views\UserInfo\StudentsBySubject.cshtml" />
+    <Content Include="Views\UserInfo\Student.cshtml" />
+    <Content Include="Views\UserInfo\StudentList.cshtml" />
+    <Content Include="Views\UserInfo\TeacherList.cshtml" />
+    <Content Include="Views\UserInfo\AssignSubject.cshtml" />
+    <Content Include="Views\UserInfo\AssignSubjectToTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,20 +302,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612282308216_InitialCreate.resx">
-      <DependentUpon>201612282308216_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701211719369_ModelMigration.resx">
-      <DependentUpon>201701211719369_ModelMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701220019051_ModelMigration2.resx">
-      <DependentUpon>201701220019051_ModelMigration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701220146500_ModelMigration3.resx">
-      <DependentUpon>201701220146500_ModelMigration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221837278_ModelMigration4.resx">
-      <DependentUpon>201701221837278_ModelMigration4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701270905211_Initial.resx">
+      <DependentUpon>201701270905211_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

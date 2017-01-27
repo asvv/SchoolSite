@@ -11,7 +11,8 @@ namespace SchoolSite.Models
 
         public Student()
         {
-            
+            CurrentGrades = new List<Grade>();
+           // CurrentSubjects = new List<Subject>();
 
         }
         [DisplayName("Specializacja")]
@@ -26,9 +27,10 @@ namespace SchoolSite.Models
         [DisplayName("Rok rozpoczęcia studiów")]
         public string StartStudiesDate
         { get; set; }
-        [DisplayName("Przedmioty")]
-        public virtual ICollection<Subject> CurrentSubjects
-        { get; set; }
+        
+        //public virtual ICollection<Subject> CurrentSubjects
+        //{ get; set; }
+
         [DisplayName("Oceny")]
         public virtual ICollection<Grade> CurrentGrades
         { get; set; }
